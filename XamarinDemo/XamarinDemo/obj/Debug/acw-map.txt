@@ -1,0 +1,2 @@
+XamarinDemo.MainActivity;xamarindemo.MainActivity
+XamarinDemo.BorderWithPoint;xamarindemo.BorderWithPoint

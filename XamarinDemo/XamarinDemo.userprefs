@@ -1,0 +1,13 @@
+﻿<Properties StartupItem="XamarinDemo\XamarinDemo.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.asd" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="XamarinDemo\MainActivity.cs">
+    <Files>
+      <File FileName="XamarinDemo\MainActivity.cs" Line="67" Column="67" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.XamarinDemo AndroidDesignerPreferredDevice="Nexus 4" AndroidDesignerPreferredTheme="Theme.Black.NoTitleBar" />
+</Properties>
