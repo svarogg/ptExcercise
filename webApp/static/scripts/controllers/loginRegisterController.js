@@ -28,15 +28,6 @@ function register($scope, $location, User){
   );
 }
 
-function specifyRoutes($routeProvider){
-  $routeProvider
-    .when('/',  {templateUrl: 'partials/login_register.html'})
-    .when('/todos', {templateUrl: 'partials/todos.html'})
-    .when('/todos/new', {templateUrl: 'partials/new_todo.html'})
-}
-
-var webApp = angular.module('webApp', ['ngRoute', 'serverApi', 'LocalStorageModule']);
-
 webApp.controller(
   'loginRegisterController',
   [
@@ -53,26 +44,3 @@ webApp.controller(
     }
   ]
 );
-
-webApp.controller(
-  'todoController',
-  [
-    '$scope',
-    '$location',
-    'User',
-    function($scope, $location, User){
-      if(!$scope.$root.user){
-        // TODO: Remove this. For DEBUG purposes only
-        User.login($scope.user, {"email": "pipiska@gmail.com", "password": "1234"},
-          function(res){
-            $scope.$root.user = res.user;
-            $scope.$root.token = res.id;
-          });
-        // $location.path("/");
-      }
-    }
-  ]
-);
-
-
-webApp.config(specifyRoutes);
