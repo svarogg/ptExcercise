@@ -1,8 +1,16 @@
-function login($scope, $location, User){
+var User, localStorageService;
+
+function logout($scope, $location){
+  clearCurrentUser(localStorageService);
+  User.logout();
+  $location.path("/");
+}
+
+function login($scope, $location){
   User.login($scope.user,
     function(res){
-      $scope.$root.user = res.user;
-      $scope.$root.user.token = res.id;
+      user = res.user;
+      setCurrentUser(localStorageService, user);
       $location.path("/todos");
     },
     function(res){
@@ -17,10 +25,10 @@ function login($scope, $location, User){
   );
 }
 
-function register($scope, $location, User){
+function register($scope, $location){
   User.create($scope.user,
     function(res){
-      login($scope, $location, User);
+      login($scope, $location);
     },
     function(res){
       $scope.errorMessage = "Could not register user!"
@@ -34,12 +42,18 @@ webApp.controller(
     '$scope',
     '$location',
     'User',
-    function($scope, $location, User){
+    'localStorageService',
+    function($scope, $location, _User, _localStorageService){
+      User = _User;
+      localStorageService = _localStorageService;
       $scope.login = function(){
-        login($scope, $location, User);
+        login($scope, $location);
       };
       $scope.register = function(){
-        register($scope, $location, User);
+        register($scope, $location);
+      }
+      $scope.logout = function(){
+        logout($scope, $location);
       }
     }
   ]

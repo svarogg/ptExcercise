@@ -1,0 +1,10 @@
+<form data-ng-controller="newTodoController">
+  <a href="#/todos">Back to List of Todos</a>
+  <p>
+    Title: <input type="text" name="title" data-ng-model="todo.title" /> <br/>
+    Content:<br> <textarea rows="4" cols="50" name="content" data-ng-model="todo.content" ></textarea>
+  </p>
+  <div class="error" data-ng-bind="errorMessage"></div>
+
+   <button data-ng-click="addTodo()" id="loginButton" >Add Todo!</button>
+</form>

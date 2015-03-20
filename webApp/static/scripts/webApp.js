@@ -1,5 +1,4 @@
 
-
 function specifyRoutes($routeProvider){
   $routeProvider
     .when('/',  {templateUrl: 'partials/login_register.html'})
@@ -7,6 +6,6 @@ function specifyRoutes($routeProvider){
     .when('/todos/new', {templateUrl: 'partials/new_todo.html'})
 }
 
-var webApp = angular.module('webApp', ['ngRoute', 'serverApi', 'LocalStorageModule']);
+var webApp = angular.module('webApp', ['ngRoute', 'lbServices', 'LocalStorageModule']);
 
 webApp.config(specifyRoutes);

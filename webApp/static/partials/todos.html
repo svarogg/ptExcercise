@@ -1,3 +1,23 @@
 <div data-ng-controller="todoController">
-  <a href="#/todo/new">Create new Todo</a>
+  <a href="#/todos/new">Create new Todo</a> <a href="" data-ng-controller="loginRegisterController" data-ng-click="logout()" >Logout</a>
+  <div>
+    Todos:
+    <div class="error" data-ng-bind="errorMessage"></div>
+    <table data-ng-show="todos.length > 0">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="todo in todos">
+          <td>{{ todo.title }}</td>
+          <td>{{ todo.content }}</td>
+          <td><a href="#/todos" data-ng-click="deleteTodo(todo.id)">Done!</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </form>

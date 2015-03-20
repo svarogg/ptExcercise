@@ -1,10 +1,10 @@
 <form data-ng-controller="loginRegisterController">
   <p>
-    Email: <input type="text" data-ng-model="user.email"> <br/>
-    Password: <input type="password" data-ng-model="user.password">
+    Email: <input type="text" name="email" data-ng-model="user.email"> <br/>
+    Password: <input type="password" name="password" data-ng-model="user.password">
   </p>
   <div class="error" data-ng-bind="errorMessage"></div>
 
-   <button data-ng-click="login()" id="loginButton" >Login!</button> 
+   <button data-ng-click="login()" id="loginButton" >Login!</button>
    <button data-ng-click="register()" id="registerButton" >Register!</button>
  </form>
