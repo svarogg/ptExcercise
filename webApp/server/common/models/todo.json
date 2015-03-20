@@ -1,0 +1,30 @@
+{
+  "name": "Todo",
+  "plural": "Todos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user":{
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

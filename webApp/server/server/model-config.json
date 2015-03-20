@@ -25,5 +25,9 @@
   "Role": {
     "dataSource": "mongo",
     "public": false
+  },
+  "Todo": {
+    "dataSource": "mongo",
+    "public": true
   }
 }
